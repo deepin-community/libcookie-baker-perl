@@ -1,15 +1,30 @@
-Source: template-repository
-Section: unknown
+Source: libcookie-baker-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Florian Schlichting <fsfs@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-tiny-perl,
+               perl
+Build-Depends-Indep: libtest-time-perl <!nocheck>,
+                     liburi-perl <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libcookie-baker-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libcookie-baker-perl.git
+Homepage: https://metacpan.org/release/Cookie-Baker
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libcookie-baker-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         liburi-perl
+Recommends: libcookie-baker-xs-perl (>= ${source:Upstream-Version}~)
+Breaks: libcookie-baker-xs-perl (<< ${source:Upstream-Version}~)
+Multi-Arch: foreign
+Description: simple cookie string generator and parser
+ Cookie::Baker provides a simple cookie string generator and parser.
+ There are many other cookie related modules on CPAN, like CGI,
+ CGI::Simple, Plack, or Dancer::Cookie. But none is as simple as
+ Cookie::Baker.
