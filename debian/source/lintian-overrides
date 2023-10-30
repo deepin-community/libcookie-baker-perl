@@ -1,0 +1,2 @@
+# the packages belong together and have the same upstream author
+libcookie-baker-perl source: version-substvar-for-external-package Recommends * ${source:Upstream-Version} libcookie-baker-perl -> libcookie-baker-xs-perl
