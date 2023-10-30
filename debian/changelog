@@ -1,5 +1,177 @@
-template-repository (1.0-1) unstable; urgency=medium
+libcookie-baker-perl (0.11-3) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Apply multi-arch hints. + libcookie-baker-perl: Add Multi-Arch: foreign.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 22 Oct 2022 01:17:45 +0100
+
+libcookie-baker-perl (0.11-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Update standards version to 4.4.1, no changes needed.
+  * Update standards version to 4.5.0, no changes needed.
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.6.0, no changes needed.
+
+  [ gregor herrmann ]
+  * debian/control: remove upper bounds of Recommends/Breaks on libcookie-
+    baker-xs-perl.
+    Cookie::Baker suggests any version of Cookie::Baker::XS and warns if the
+    version of Cookie::Baker::XS is lower than the version of Cookie::Baker,
+    but there is no indication that Cookie::Baker::XS can't have a higher
+    version. Upstream now has released Cookie::Baker::XS 0.12.
+  * Add a lintian override for the Recommends on libcookie-baker-xs-perl.
+  * Set Rules-Requires-Root: no.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 03 Apr 2022 14:45:34 +0200
+
+libcookie-baker-perl (0.11-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Xavier Guimard ]
+  * Team upload
+  * Import upstream version 0.11
+
+  [ gregor herrmann ]
+  * Annotate test-only build dependencies with <!nocheck>.
+  * Declare compliance with Debian Policy 4.4.0.
+  * Bump debhelper-compat to 12.
+  * debian/watch: use uscan version 4.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 21 Jul 2019 22:59:45 -0300
+
+libcookie-baker-perl (0.10-4) unstable; urgency=medium
+
+  * Team upload
+  * Add a "breaks" for bad version of libcookie-baker-xs-perl
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 03 Oct 2018 23:59:21 +0200
+
+libcookie-baker-perl (0.10-3) unstable; urgency=medium
+
+  * Team upload
+  * Update libcookie-baker-xs-perl dependency to
+      libcookie-baker-xs-perl  (>= ${source:Upstream-Version}~),
+      libcookie-baker-xs-perl  (<= ${source:Upstream-Version}-99999)
+    thanks to Olly!
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 03 Oct 2018 23:35:45 +0200
+
+libcookie-baker-perl (0.10-2) unstable; urgency=medium
+
+  * Team upload
+  * Add (= ${source:Upstream-Version}) to libcookie-baker-xs-perl dependency.
+    This is checked by Cookie::Baker
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 03 Oct 2018 21:21:29 +0200
+
+libcookie-baker-perl (0.10-1) unstable; urgency=medium
+
+  * Team upload
+  * Add libcookie-baker-xs-perl in recommended dependencies
+  * Import upstream version 0.10
+  * Declare compliance with policy 4.2.1
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 29 Sep 2018 09:16:06 +0200
+
+libcookie-baker-perl (0.09-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Damyan Ivanov ]
+  * declare conformance with Policy 4.1.3 (no changes needed)
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * Import upstream version 0.09.
+  * Bump debhelper compatibility level to 10.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 17 Mar 2018 20:19:12 +0100
+
+libcookie-baker-perl (0.08-1) unstable; urgency=medium
+
+  * Import upstream version 0.08
+  * Switch build-dependency from M::B to M::B::Tiny
+  * Update copyright years
+  * Declare compliance with Debian Policy 4.1.0
+
+ -- Florian Schlichting <fsfs@debian.org>  Mon, 25 Sep 2017 22:23:29 +0200
+
+libcookie-baker-perl (0.07-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * debian/upstream/metadata: use HTTPS for GitHub URLs.
+
+  [ Nuno Carvalho ]
+  * Import upstream version 0.07.
+  * debian/control:
+    + update standards version to 3.9.8
+    + drop version requirements for libmodule-build-perl, perl, and
+      libtest-simple-perl, no longer required.
+    + move to debhelper 9.
+
+  [ gregor herrmann ]
+  * Build-depend on libtest-time-perl instead of libtest-mocktime-perl,
+    and drop use_test-mocktime.patch accordingly.
+
+ -- Nuno Carvalho <smash@cpan.org>  Tue, 04 Oct 2016 13:27:53 +0100
+
+libcookie-baker-perl (0.06-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 0.06.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 04 Jul 2015 18:22:33 +0200
+
+libcookie-baker-perl (0.05-2) unstable; urgency=medium
+
+  * Team upload
+  * fix use_test-mocktime.patch to use set_fixed_time() instead of
+    set_absolute_time()
+    Fixes (rare) CI test failure when the test is run just before the clock
+    advances to the next seccond
+
+ -- Damyan Ivanov <dmn@debian.org>  Sat, 20 Jun 2015 08:01:22 +0000
+
+libcookie-baker-perl (0.05-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * debian/control: update Module::Build dependency.
+  * Add debian/upstream/metadata
+  * Import upstream version 0.05
+  * Declare compliance with Debian Policy 3.9.6.
+  * Mark package as autopkgtest-able.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 01 Jun 2015 20:05:08 +0200
+
+libcookie-baker-perl (0.03-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 01 Mar 2014 22:39:23 +0100
+
+libcookie-baker-perl (0.02-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #728337)
+
+ -- Florian Schlichting <fsfs@debian.org>  Fri, 01 Nov 2013 18:48:42 +0100
