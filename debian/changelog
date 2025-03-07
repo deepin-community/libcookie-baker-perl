@@ -1,3 +1,12 @@
+libcookie-baker-perl (0.12-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 0.12.
+  * Declare compliance with Debian Policy 4.6.2.
+  * Refresh lintian override (formatting).
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 20 Jan 2024 16:59:16 +0100
+
 libcookie-baker-perl (0.11-3) unstable; urgency=medium
 
   [ Debian Janitor ]
